@@ -1,13 +1,14 @@
 'use client'
 
 import Image from "next/image";
+import posthog from "posthog-js";
 
 const ExploreBtn = () => {
   return (
     <a
       href="#events"
       id="explore-btn"
-      onClick={() => console.log("CLICK")}
+      onClick={() => posthog.capture("explore_events_clicked")}
     >
       Explore Events
       <Image
